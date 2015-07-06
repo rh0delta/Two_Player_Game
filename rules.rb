@@ -1,16 +1,18 @@
 # Rules of the game
 # @lives_player1 = 3
 # @lives_player2 = 3
-@lives = [3,3]
-@players = ["", ""]
-@scores = [0,0]
+# @lives = [3,3]
+# @players = ["", ""]
+# @scores = [0,0]
 @correct = "Correct!"
 @incorrect = "Incorrect!"
 
 def generate_question
   num1 = rand(1..20)
   num2 = rand(1..20)
-  "#{num1} + #{num2}"
+  operation = "+-*/"
+  op = rand(0..3)
+  "#{num1} #{operation[op]} #{num2}"
 end
 
 def verify_answer(question, answer)
